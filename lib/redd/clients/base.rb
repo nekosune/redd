@@ -156,7 +156,11 @@ module Redd
         @connection ||= Faraday.new(
           @api_endpoint,
           headers: default_headers,
-          builder: middleware
+          builder: middleware,
+		  ssl: {
+		  :verify => false,
+		  :ssl_version => "SSLv23"
+		  }
         )
       end
 
@@ -173,7 +177,11 @@ module Redd
         @auth_connection ||= Faraday.new(
           @auth_endpoint,
           headers: auth_headers,
-          builder: middleware
+          builder: middleware,
+		   ssl: {
+		  :verify => false,
+		  :ssl_version => "SSLv23"
+		  }
         )
       end
     end
