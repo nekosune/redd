@@ -159,7 +159,8 @@ module Redd
           builder: middleware,
 		  ssl: {
 		  :verify => false,
-		  :version => :SSLv3
+		  verify: false 
+#		  :version => :SSLv3
 		  }
         )
       end
@@ -180,7 +181,7 @@ module Redd
           builder: middleware,
 		   ssl: {
 		  :verify => false,
-		  :version => :SSLv3
+#		  :version => :SSLv3
 		  }
         )
       end
